@@ -6,41 +6,32 @@ class Guitar {
         this.frets = frets;
         this.tuning = tuning;
         this.chromaticKey = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
+        this.scaleRef = {
+            minor: [true, false, true, true, false, true, false, true, true, false, true, false],
+            major: [true, false, true, false, true, true, false, true, false, true, false, true],
+            maj: [true, false, false, false, true, false, false, true, false, false, false, false],
+            min: [true, false, false, true, false, false, false, true, false, false, false, false]
+        }
     }
 
     generateScale(scale, key) {
-        let naturalMinor = [true, false, true, true, false, true, false, true, true, false, true, false];
         let newScale = [];
-        if (scale === "minor") {
-            for (let i = 0; i < 12; i++) {
-                let startNoteIndex = this.chromaticKey.indexOf(key);
-                if (naturalMinor[(12 + i - startNoteIndex) % 12]) {
-                    newScale.push(this.chromaticKey[i]);
-                } else {
-                    newScale.push(" ");
-                }
+        for (let i = 0; i < 12; i++) {
+            let startNoteIndex = this.chromaticKey.indexOf(key);
+            if (this.scaleRef[scale][(12 + i - startNoteIndex) % 12]) {
+                newScale.push(this.chromaticKey[i]);
+            } else {
+                newScale.push(" ");
             }
-            return newScale;
         }
-        if (scale === "major") {
-            for (let i = 0; i < 12; i++) {
-                let startNoteIndex = this.chromaticKey.indexOf(key);
-                if (naturalMinor[(12 + i - startNoteIndex) % 12]) {
-                    newScale.push(this.chromaticKey[i]);
-                } else {
-                    newScale.push(" ");
-                }
-            }
-            return newScale;
-        }
+        return newScale;
     }
 
     generateBoard(strings, frets, tuning, scale, key) {
         let board = [];
-        const scaleKey =
-            (scale === "chromatic")
-                ? this.chromaticKey
-                : this.generateScale(scale, key);
+        const scaleKey = scale === "chromatic"
+            ? this.chromaticKey
+            : this.generateScale(scale, key);
 
         for (let i = 0; i < strings; i++) {
             let stringTuning = tuning[i];
