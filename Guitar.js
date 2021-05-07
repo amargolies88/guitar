@@ -1,5 +1,5 @@
 class Guitar {
-    constructor(strings = 6, frets = 24, tuning = "EADGBE", scale = "chromatic", key = "C") {
+    constructor(strings = 6, frets = 24, tuning = "EADGBE", key = "C", scale = "chromatic") {
         this.key = key;
         this.scale = scale;
         this.strings = strings;
@@ -10,7 +10,11 @@ class Guitar {
             minor: [true, false, true, true, false, true, false, true, true, false, true, false],
             major: [true, false, true, false, true, true, false, true, false, true, false, true],
             maj: [true, false, false, false, true, false, false, true, false, false, false, false],
-            min: [true, false, false, true, false, false, false, true, false, false, false, false]
+            min: [true, false, false, true, false, false, false, true, false, false, false, false],
+            dim: [true, false, false, true, false, false, true, false, false, false, false, false],
+            maj7: [true, false, false, false, true, false, false, true, false, false, false, true],
+            min7: [true, false, false, true, false, false, false, true, false, false, true, false],
+            dim7: [true, false, false, true, false, false, true, false, false, true, false, false]
         }
     }
 
