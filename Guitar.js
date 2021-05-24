@@ -4,7 +4,7 @@ class Guitar {
         this.scale = scale;
         this.strings = strings;
         this.frets = frets;
-        this.tuning = tuning;
+        this.tuning = tuning.toUpperCase();
         this.chromaticKey = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
         this.scaleRef = {
             minor: [true, false, true, true, false, true, false, true, true, false, true, false],
@@ -16,6 +16,9 @@ class Guitar {
             min7: [true, false, false, true, false, false, false, true, false, false, true, false],
             dim7: [true, false, false, true, false, false, true, false, false, true, false, false]
         }
+    }
+    ck = function () {
+        return ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
     }
 
     generateScale(scale, key) {
@@ -53,6 +56,7 @@ class Guitar {
     printBoardH() {
         let board = this.generateBoard(this.strings, this.frets, this.tuning, this.scale, this.key);
         for (let i = board.length - 1; i >= 0; i--) {
+
             let stringString = "";
             for (let j = 0; j <= this.frets; j++) {
                 let note = board[i][j];
