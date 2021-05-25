@@ -39,9 +39,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App" >
-        <UserInput strings={this.state.strings} handleChange={this.handleChange} />
+        <UserInput tuning={this.state.tuning} strings={this.state.strings} handleChange={this.handleChange} />
         <Guitar strings={this.state.strings} frets={this.state.frets} tuning={this.state.tuning} rootNote={this.state.rootNote} scale={this.state.scale} />
-        <button onClick={this.handleSilly} id="trashButton">YOU DARE</button>
       </div>
     );
   }

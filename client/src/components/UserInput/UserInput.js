@@ -9,6 +9,25 @@ class UserInput extends Component {
         this.props.handleChange(e.target);
     }
     render() {
+        let stringDrops = []
+        for (let i = 0; i < this.props.strings; i++) {
+            stringDrops.push(
+                <select key={i} defaultValue={this.props.tuning[i]} className="string-tuning" name="string-tuning-1" id={i}>
+                    <option value="A">A</option>
+                    <option value="A#">A#</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="C#">C#</option>
+                    <option value="D">D</option>
+                    <option value="D#">D#</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="F#">F#</option>
+                    <option value="G">G</option>
+                    <option value="G#">G#</option>
+                </select>
+            )
+        }
         return (
             <div onChange={this.handleChange} className="UserInput" >
                 <label htmlFor="strings">Number of strings (1-88):</label>
@@ -19,34 +38,7 @@ class UserInput extends Component {
 
                 <label htmlFor="tuning">Choose a tuning:</label>
                 <div className="instrument-input" name="tuning" id="tuning">
-                    <select defaultValue="E" className="string-tuning" name="string-tuning-1" id="0">
-                        <option value="A">A</option>
-                        <option value="A#">A#</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="C#">C#</option>
-                        <option value="D">D</option>
-                        <option value="D#">D#</option>
-                        <option value="E">E</option>
-                        <option value="F">F</option>
-                        <option value="F#">F#</option>
-                        <option value="G">G</option>
-                        <option value="G#">G#</option>
-                    </select>
-                    <select defaultValue="A" className="string-tuning" name="string-tuning-2" id="1">
-                        <option value="A">A</option>
-                        <option value="A#">A#</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="C#">C#</option>
-                        <option value="D">D</option>
-                        <option value="D#">D#</option>
-                        <option value="E">E</option>
-                        <option value="F">F</option>
-                        <option value="F#">F#</option>
-                        <option value="G">G</option>
-                        <option value="G#">G#</option>
-                    </select>
+                    {stringDrops}
                 </div>
 
                 <label htmlFor="rootNote">Choose a root note:</label>

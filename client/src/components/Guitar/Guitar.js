@@ -79,7 +79,7 @@ class Guitar extends Component {
             for (let j = 0; j <= this.props.frets; j++) {
                 let note = board[i][j];
                 let formatNote = note[1] ? note : note + " ";
-                stringRow.push(<td key={j}><pre className="note-cell" key={j}>{formatNote}</pre></td>);
+                stringRow.push(<td className="actual-note-cell" key={j}><pre className="pretty-preeze note-cell" key={j}>{formatNote}</pre></td>);
             }
             webBoard.push(<tr className="note-cell" key={i}>{stringRow}</tr>)
         }
