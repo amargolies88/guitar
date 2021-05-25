@@ -1,4 +1,4 @@
-const Guitar = require('./Guitar').default;
+const Guitar = require('./Guitar');
 const validKeys = ['Ab', 'A', 'A#', 'Bb', 'B', 'C', 'C#', 'Db', 'D', 'D#', 'Eb', 'E', 'F', 'F#', 'Gb', 'G', 'G#'];
 
 const readline = require('readline').createInterface({

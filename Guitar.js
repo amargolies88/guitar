@@ -6,6 +6,7 @@ class Guitar {
         this.frets = frets;
         this.tuning = tuning.toUpperCase();
         this.chromaticKey = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
+        this.chromaticKeyb = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab'];
         this.scaleRef = {
             minor: [true, false, true, true, false, true, false, true, true, false, true, false],
             major: [true, false, true, false, true, true, false, true, false, true, false, true],
