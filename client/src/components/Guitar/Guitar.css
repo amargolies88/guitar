@@ -1,16 +1,27 @@
-.note-cell {
-  font-family: "Lucida Console", "Courier New", monospace;
-  border: 1px solid black;
-  text-align: center;
-}
 #tablethang {
   text-align: center;
 }
-
-.pretty-preeze {
+.label-cell {
+  font-family: "Lucida Console", "Courier New", monospace;
+  text-align: center;
+}
+.note-cell-full {
+  text-align: center;
+  border: 1px solid black;
+  background-color: rgba(0, 255, 0, 0.7);
+}
+.note-cell-empty {
+  text-align: center;
+  border: 1px solid black;
+  background-color: rgba(0, 0, 0, 0.075);
+}
+#note-cell-0 {
+  border: none;
+  opacity: 0.7;
+}
+.note-cell-text {
+  font-family: "Lucida Console", "Courier New", monospace;
   text-align: center;
   margin: 0;
-}
-.actual-note-cell {
-  text-align: center;
+  opacity: 1;
 }

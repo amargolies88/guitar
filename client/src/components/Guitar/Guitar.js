@@ -53,7 +53,6 @@ class Guitar extends Component {
       }
       board.push(inString);
     }
-    console.log(board);
     return board;
   }
 
@@ -78,9 +77,11 @@ class Guitar extends Component {
       for (let j = 0; j <= this.props.frets; j++) {
         let note = board[i][j];
         let formatNote = note[1] ? note : note + " ";
+        let assignedClass = note[0] === " " ? "note-cell-empty" : "note-cell-full";
+        let assignId = `note-cell-${j}`;
         stringRow.push(
-          <td className="actual-note-cell" key={j}>
-            <pre className="pretty-preeze note-cell" key={j}>
+          <td className={assignedClass} id={assignId} key={j}>
+            <pre className="note-cell-text" key={j}>
               {formatNote}
             </pre>
           </td>
@@ -99,7 +100,7 @@ class Guitar extends Component {
     let labels = [];
     for (let i = 0; i <= this.props.frets; i++) {
       labels.push(
-        <td className="note-cell" key={i}>
+        <td className="label-cell" key={i}>
           {i}
         </td>
       );
@@ -108,7 +109,6 @@ class Guitar extends Component {
   }
 
   render() {
-    console.log(this);
     return (
       <div>
         <table id="tablethang">
